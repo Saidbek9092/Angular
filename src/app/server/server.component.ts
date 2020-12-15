@@ -8,4 +8,20 @@ import { Component } from '@angular/core';
 )
 
 export class ServerComponent {
+  serverId = 10;
+  serverStatus = 'offline';
+  // tslint:disable-next-line:typedef
+
+  constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+  }
+
+  // tslint:disable-next-line:typedef
+  getServerStatus(){
+    return this.serverStatus;
+  }
+
+  getColor() {
+    return this.serverStatus === 'online' ? 'green' : 'red';
+  }
 }
